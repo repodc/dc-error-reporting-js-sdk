@@ -55,18 +55,18 @@ class DcErrorReportingSdk {
                 });
 
                 res.on('end', () => {
-                    console.log('Response:', responseData);
+                    //
                 });
             });
 
             req.on('error', (error) => {
-                console.error('Error:', error);
+                console.error('Error on logger:', error);
             });
 
             req.write(JSON.stringify(data));
             req.end();
         } catch (error) {
-            console.log('error', error);
+            console.log('Error on logger', error);
         }
     }
 }
