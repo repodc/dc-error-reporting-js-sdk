@@ -3,18 +3,18 @@ class DcErrorReportingSdk {
     hostname = 'dc-error-reporting.dctec.dev';
 
     systemName;
-    enviroment;
+    environment;
     token;
 
-    constructor(systemName, enviroment, token) {
+    constructor(systemName, environment, token) {
         this.systemName = systemName;
-        this.enviroment = enviroment;
+        this.environment = environment;
         this.token = token;
     }
 
     send(error, requestedUrl) {
         try {
-            if (!this.token || !this.enviroment || this.enviroment === 'local') {
+            if (!this.token || !this.environment || this.environment === 'local') {
                 return;
             }
 
@@ -22,7 +22,7 @@ class DcErrorReportingSdk {
 
             const data = {
                 system_name: this.systemName,
-                environment: this.enviroment,
+                environment: this.environment,
                 requested_url: requestedUrl,
                 error: {
                     name: error.name || error || '',
