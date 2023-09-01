@@ -72,4 +72,6 @@ class DcErrorReportingSdk {
     }
 }
 
-module.exports = DcErrorReportingSdk;
+export {
+    DcErrorReportingSdk
+};
