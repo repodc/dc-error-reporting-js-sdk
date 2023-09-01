@@ -18,7 +18,7 @@ class DcErrorReportingSdk {
                 return;
             }
 
-            const http = require('http');
+            const https = require('https');
 
             const data = {
                 system_name: this.systemName,
@@ -39,7 +39,6 @@ class DcErrorReportingSdk {
 
             const options = {
                 hostname: this.hostname,
-                port: 443,
                 path: '/api/error_report',
                 method: 'POST',
                 headers: {
@@ -48,7 +47,7 @@ class DcErrorReportingSdk {
                 },
             };
 
-            const req = http.request(options, (res) => {
+            const req = https.request(options, (res) => {
                 let responseData = '';
 
                 res.on('data', (chunk) => {
