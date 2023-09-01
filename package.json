@@ -22,7 +22,7 @@
     "typescript": "^3"
   },
   "devDependencies": {
-    "@types/node": "^20.5.7",
+    "@types/node": "^16",
     "typescript": "^3"
   }
 }

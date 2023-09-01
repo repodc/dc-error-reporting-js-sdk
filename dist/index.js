@@ -1,4 +1,3 @@
-"use strict";
 class DcErrorReportingSdk {
     constructor(systemName, enviroment, token) {
         this.apiUrl = 'https://dc-error-reporting.dctec.dev';
