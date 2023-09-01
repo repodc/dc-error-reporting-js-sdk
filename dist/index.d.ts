@@ -7,3 +7,4 @@ declare class DcErrorReportingSdk {
     constructor(systemName: string, enviroment: string, token: string);
     send(error: any, requestedUrl?: string): void;
 }
+//# sourceMappingURL=index.d.ts.map
