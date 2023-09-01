@@ -1,10 +1,8 @@
 {
   "name": "dc-error-reporting-js-sdk",
-  "type": "module",
   "version": "1.0.0",
   "description": "SDK para integrar o sistema de alerta de erros com PHP",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,12 +15,5 @@
   "bugs": {
     "url": "https://github.com/repodc/dc-error-reporting-js-sdk/issues"
   },
-  "homepage": "https://github.com/repodc/dc-error-reporting-js-sdk#readme",
-  "peerDependencies": {
-    "typescript": "^3"
-  },
-  "devDependencies": {
-    "@types/node": "^16",
-    "typescript": "^3"
-  }
+  "homepage": "https://github.com/repodc/dc-error-reporting-js-sdk#readme"
 }

@@ -1,18 +1,18 @@
 class DcErrorReportingSdk {
-    private apiUrl = 'https://dc-error-reporting.dctec.dev';
-    private hostname = 'dc-error-reporting.dctec.dev';
+    apiUrl = 'https://dc-error-reporting.dctec.dev';
+    hostname = 'dc-error-reporting.dctec.dev';
 
-    private systemName: string;
-    private enviroment: string;
-    private token: string;
+    systemName;
+    enviroment;
+    token;
 
-    constructor(systemName: string, enviroment: string, token: string) {
+    constructor(systemName, enviroment, token) {
         this.systemName = systemName;
         this.enviroment = enviroment;
         this.token = token;
     }
 
-    public send(error: any, requestedUrl?: string) {
+    send(error, requestedUrl) {
         try {
             if (!this.token || !this.enviroment || this.enviroment === 'local') {
                 return;
@@ -48,10 +48,10 @@ class DcErrorReportingSdk {
                 },
             };
 
-            const req = http.request(options, (res: any) => {
+            const req = http.request(options, (res) => {
                 let responseData = '';
 
-                res.on('data', (chunk: any) => {
+                res.on('data', (chunk) => {
                     responseData += chunk;
                 });
 
@@ -60,7 +60,7 @@ class DcErrorReportingSdk {
                 });
             });
 
-            req.on('error', (error: any) => {
+            req.on('error', (error) => {
                 console.error('Error:', error);
             });
 
@@ -72,6 +72,4 @@ class DcErrorReportingSdk {
     }
 }
 
-export {
-    DcErrorReportingSdk
-};
+module.exports = DcErrorReportingSdk;
